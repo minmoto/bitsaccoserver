@@ -13,9 +13,11 @@
     "incremental": true,
     "tsBuildInfoFile": "./dist/.tsbuildinfo",
     "skipLibCheck": true,
+    "typeRoots": ["./node_modules/@types"],
     "strictNullChecks": false,
     "noImplicitAny": false,
     "strictBindCallApply": false,
+    "types": ["node"],
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
     "esModuleInterop": true,
@@ -23,6 +25,7 @@
       "@/*": ["src/*"]
     }
   },
+  "exclude": ["**/*.spec.ts", "**/*.test.ts", "test"],
   "watchOptions": {
     "watchFile": "useFsEvents",
     "watchDirectory": "useFsEvents",

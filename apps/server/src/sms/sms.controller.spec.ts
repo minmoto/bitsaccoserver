@@ -9,7 +9,7 @@ import { OrganizationServiceDocument } from '@/common/schemas/service.schema';
 
 describe('SmsController', () => {
   let smsController: SmsController;
-  let smsService: SmsService;
+  let _smsService: SmsService;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
@@ -61,7 +61,7 @@ describe('SmsController', () => {
     }).compile();
 
     smsController = app.get<SmsController>(SmsController);
-    smsService = app.get<SmsService>(SmsService);
+    _smsService = app.get<SmsService>(SmsService);
   });
 
   it('should be defined', () => {

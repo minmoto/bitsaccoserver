@@ -6,7 +6,7 @@ import {
   TransactionLogDocument,
   TransactionType,
   TransactionStatus,
-} from '@/common';
+} from './schemas/transaction-log.schema';
 
 @Injectable()
 export class UsageTrackingMiddleware implements NestMiddleware {
@@ -22,7 +22,7 @@ export class UsageTrackingMiddleware implements NestMiddleware {
     // Capture response data
     res.send = function (data) {
       const responseTime = Date.now() - startTime;
-      const user = (req as any).user;
+      const _user = (req as any).user;
       const organizationId = (req as any).organizationId;
       const apiKeyId = (req as any).apiKeyId;
 

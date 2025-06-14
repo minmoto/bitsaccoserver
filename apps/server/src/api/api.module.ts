@@ -1,18 +1,18 @@
+import * as Joi from 'joi';
+import type { RedisClientOptions } from 'redis';
+import { redisStore } from 'cache-manager-redis-store';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { CacheModule } from '@nestjs/cache-manager';
 import { ThrottlerModule } from '@nestjs/throttler';
-import { redisStore } from 'cache-manager-redis-store';
-import type { RedisClientOptions } from 'redis';
-import * as Joi from 'joi';
 
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { ManagerModule } from './manager/manager.module';
-import { AuthModule } from './auth/auth.module';
-import { SmsModule } from './sms/sms.module';
-import { SharesModule } from './shares/shares.module';
+import { ApiController } from './api.controller';
+import { ApiService } from './api.service';
+import { AuthModule } from '../auth/auth.module';
+import { SmsModule } from '../sms/sms.module';
+import { SharesModule } from '../shares/shares.module';
+import { OrganizationModule } from '../organization';
 
 @Module({
   imports: [
@@ -105,11 +105,11 @@ import { SharesModule } from './shares/shares.module';
 
     // Feature modules
     AuthModule,
-    ManagerModule,
     SmsModule,
     SharesModule,
+    OrganizationModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [ApiController],
+  providers: [ApiService],
 })
-export class AppModule {}
+export class ApiModule {}

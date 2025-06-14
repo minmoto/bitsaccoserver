@@ -10,7 +10,16 @@
       "Bash(grep:*)",
       "Bash(yarn test)",
       "Bash(find:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run:*)",
+      "Bash(yarn add:*)",
+      "Bash(yarn build:*)",
+      "Bash(yarn install)",
+      "Bash(sed:*)",
+      "Bash(yarn lint)",
+      "Bash(yarn lint:*)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }

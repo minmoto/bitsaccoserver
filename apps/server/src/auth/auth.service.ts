@@ -429,7 +429,7 @@ export class AuthService {
     }
   }
 
-  async resetPassword(token: string, newPassword: string): Promise<void> {
+  async resetPassword(_token: string, _newPassword: string): Promise<void> {
     // This would typically involve validating the reset token
     // and updating the password in Keycloak
     // Implementation depends on your reset token strategy
@@ -476,7 +476,7 @@ export class AuthService {
     }
   }
 
-  async verifyEmail(token: string): Promise<void> {
+  async verifyEmail(_token: string): Promise<void> {
     // Implementation depends on your email verification strategy
     throw new HttpException(
       'Email verification via token not implemented',

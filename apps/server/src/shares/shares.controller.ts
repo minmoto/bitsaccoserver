@@ -23,7 +23,6 @@ import {
   SubscribeSharesDto,
   TransferSharesDto,
   UpdateSharesDto,
-  FindSharesTxDto,
   PaginationDto,
   UnifiedAuthGuard,
 } from '@/common';

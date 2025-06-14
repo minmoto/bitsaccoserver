@@ -6,7 +6,6 @@ import {
   IsOptional,
   IsDateString,
   Min,
-  IsEnum,
 } from 'class-validator';
 import { SharesTxStatus } from '../schemas';
 

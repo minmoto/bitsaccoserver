@@ -62,7 +62,7 @@ export class SmsService {
   async sendSms({ message, receiver }: SendSmsDto): Promise<void> {
     this.logger.log(`Sending sms to ${receiver} with message ${message}`);
     const startTime = Date.now();
-    let success = false;
+    let _success = false;
     let errorType: string | undefined;
 
     try {
@@ -77,7 +77,7 @@ export class SmsService {
       this.logger.log(`Sms sent with response ${JSON.stringify(response)}`);
 
       // Record successful SMS metric
-      success = true;
+      _success = true;
       this.metricsService.recordSmsMetric({
         receiver,
         messageLength: message.length,
@@ -106,7 +106,7 @@ export class SmsService {
       `Sending bulk sms to ${receivers} with messages ${message}`,
     );
     const startTime = Date.now();
-    let success = false;
+    let _success = false;
     let errorType: string | undefined;
 
     try {
@@ -123,7 +123,7 @@ export class SmsService {
       );
 
       // Record successful bulk SMS metric
-      success = true;
+      _success = true;
       this.metricsService.recordSmsBulkMetric({
         receiverCount: receivers.length,
         messageLength: message.length,

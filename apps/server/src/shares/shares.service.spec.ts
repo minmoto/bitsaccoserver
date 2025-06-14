@@ -11,9 +11,9 @@ import { MetricsService } from '../common';
 
 describe('SharesService', () => {
   let service: SharesService;
-  let sharesModel: any;
-  let sharesOfferModel: any;
-  let metricsService: MetricsService;
+  let _sharesModel: any;
+  let _sharesOfferModel: any;
+  let _metricsService: MetricsService;
 
   const mockExecutor = {
     exec: jest.fn(),
@@ -62,9 +62,9 @@ describe('SharesService', () => {
     }).compile();
 
     service = module.get<SharesService>(SharesService);
-    sharesModel = module.get(getModelToken(SharesDocument.name));
-    sharesOfferModel = module.get(getModelToken(SharesOfferDocument.name));
-    metricsService = module.get<MetricsService>(MetricsService);
+    _sharesModel = module.get(getModelToken(SharesDocument.name));
+    _sharesOfferModel = module.get(getModelToken(SharesOfferDocument.name));
+    _metricsService = module.get<MetricsService>(MetricsService);
   });
 
   afterEach(() => {

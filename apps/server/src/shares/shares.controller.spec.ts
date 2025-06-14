@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { SharesController } from './shares.controller';
 import { SharesService } from './shares.service';
+import { UnifiedAuthGuard } from '@/common';
 
 describe('SharesController', () => {
   let controller: SharesController;
@@ -28,7 +29,7 @@ describe('SharesController', () => {
         },
       ],
     })
-      .overrideGuard(require('@/common').UnifiedAuthGuard)
+      .overrideGuard(UnifiedAuthGuard)
       .useValue({ canActivate: () => true })
       .compile();
 
